@@ -39,7 +39,9 @@ cmd_install() {
     exit 1
   }
   local newpackage=$name
-  sudo sed -i -e "/];/i \ \ \ \ $newpackage" "$programs_module_path" && pkgAdded=true
+
+  # Adding the package in repo right above your comment marker
+  sudo sed -i -e "/# -- ADD PACKAGES HERE --/i \ \ \ \ $newpackage" "$programs_module_path" && pkgAdded=true
 
   if gum confirm "Open Nvim to verify"; then
     sudo nvim "$programs_module_path"
