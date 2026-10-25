@@ -1,0 +1,14 @@
+# =====================================================================
+# CONFIGURATION FILE
+# WARNING: Only assign variables here. Do not write executable code, 
+# functions, or shell commands, as this file is loaded using 'source'.
+# would write parseable file later someday ... probably
+# =====================================================================
+
+
+# USE FLAKES NOT FOR NON FLAKES 
+gitdir="/etc/nixos"
+# WARNING Don't use without proper programs.nix 
+# there is example i guess 
+programs_file="modules/programs.nix"
+host_name="neko01t" # find it using "uname -n"
