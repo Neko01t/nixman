@@ -5,10 +5,11 @@
 # would write parseable file later someday ... probably
 # =====================================================================
 
+# Installed from script
 
 # USE FLAKES NOT FOR NON FLAKES 
 gitdir="/etc/nixos"
 # WARNING Don't use without proper programs.nix 
 # there is example i guess 
 programs_file="modules/programs.nix"
-host_name="neko01t" # find it using "uname -n"
+host_name="nova" # find it using "uname -n"

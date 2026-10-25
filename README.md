@@ -33,6 +33,7 @@ DIY
 - Git & NixOS: Mandatory (Flakes require Git to track files).
 - Gum (Optional): Highly recommended for interactive confirmation prompts.
 - Separated Packages: Your package list should be moved into a dedicated module file (e.g., modules/programs.nix).
+- Fish : For auto-completion and tab-suggestion
 
 ## Configuration Example
 
@@ -52,6 +53,6 @@ Your target package file (programs.nix or similar) must include the anchor comme
 ```
 
 > [!IMPORTANT]
-> The comment # -- ADD PACKAGES HERE -- is mandatory. Without it, the script's sed insertion will fail!
+> The comment `# -- ADD PACKAGES HERE --` is mandatory. Without it, the script's sed insertion will fail!
 
 
