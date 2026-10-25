@@ -1,4 +1,5 @@
 # Disable file completions for the main command unless needed
+# installed by Nixman Neko
 complete -c nixman -f
 
 complete -c nixman -n __fish_use_subcommand -a update -d "Update current nix package"
