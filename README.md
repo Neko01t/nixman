@@ -31,7 +31,7 @@ DIY
 ## Required Stuff 
 
 - Git & NixOS: Mandatory (Flakes require Git to track files).
-- Gum (Optional): Highly recommended for interactive confirmation prompts.
+- Gum : For interactive confirmation prompts & Logs 
 - Separated Packages: Your package list should be moved into a dedicated module file (e.g., modules/programs.nix).
 - Fish : For auto-completion and tab-suggestion
 
