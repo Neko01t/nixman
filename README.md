@@ -35,6 +35,15 @@ DIY
 - Separated Packages: Your package list should be moved into a dedicated module file (e.g., modules/programs.nix).
 - Fish : For auto-completion and tab-suggestion
 
+## Commands 
+
+- `nixman update` : Runs the flake update command to update
+- `nixman install <package-name>` : Install the package from nix package repo 
+- `nixman clean` : runs the garbage collection and deletes cached stuff 
+- `nixman build` : Runs the nixos rebuild command manually
+- `nixman run <package-name> <optional-package-commands>` : Runs the package provide without installing it on the system 
+- `nixman undo` : [new] Undo the current package git status by one . similar to uninstalling the last package you installed 
+
 ## Configuration Example
 
 Your target package file (programs.nix or similar) must include the anchor comment. The script searches for this comment to know where to insert new packages:
