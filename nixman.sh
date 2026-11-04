@@ -86,15 +86,15 @@ cmd_install() {
   fi
 
   if [ "$pkgAdded" = true ]; then
-    cmd_update false $package_name ||
-      local status=$?
+    local status=0
+    cmd_update false $newpackage
+    status=$?
     if [ $status -eq 0 ]; then
       echo "Sucess 200"
     else
       cmd_undo
       echo "Error 21 [undo auto]"
     fi
-    echo "$status"
   else
     echo "Error : 32"
   fi
@@ -106,7 +106,7 @@ cmd_test() {
 
 cmd_undo() {
   sudo git -C "$gitdir" reset --hard HEAD~1
-  cmd_update false $package_name
+  cmd_update false
   local status=$?
   [ $status -eq 0 ] && echo "Sucess 200" || echo "Error 21"
 }
