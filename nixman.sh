@@ -122,6 +122,14 @@ cmd_run() {
   nix run "nixpkgs#${package_name}" -- "$@"
 }
 
+cmd_list() {
+  local LinesNumber=$(grep -n -E '\[|\]' "$gitdir/$programs_file" | cut -d : -f 1)
+  local topLineNumber=$(($(echo "$LinesNumber" | head -n 1) + 1))
+  local lastLineNumber=$(($(echo "$LinesNumber" | tail -n 1) - 2))
+  local output=$(sed -n "${topLineNumber},${lastLineNumber}p" "$gitdir/$programs_file" | sed 's/^[ \t]*//; /^$/d; /^#/d ')
+  echo "$output"
+}
+
 # --- Main Section ---
 
 COMMAND="$1"
@@ -147,7 +155,9 @@ run)
   ;;
 undo)
   cmd_undo
-
+  ;;
+list)
+  cmd_list
   ;;
 *)
   if [[ -n $COMMAND ]]; then
