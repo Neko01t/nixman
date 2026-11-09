@@ -5,6 +5,7 @@ hostname=$(uname -n)
 packname="nixman"
 echo "Hostname : $hostname"
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+LOCAL_DIR="$HOME/.local/bin"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 init() {
   local target_dir="$CONFIG_DIR/$packname"
@@ -23,10 +24,17 @@ init() {
     return 1
   fi
   sleep 0.2
-  echo -e "\e[32mConfig Added Successfully:\e[0m"
-  echo && echo "------- Config for Nixman ----------" && echo
-  cat "$target_dir/config"
-  echo && echo "----- completions for fish ---------" && echo
-  cat "$target_dir_fish/nixman.fish"
+  if [ -f "$LOCAL_DIR/nixman" ]; then
+    cp ./nixman.sh "$LOCAL_DIR/nixman"
+  else
+    touch "$LOCAL_DIR/nixman" && cp ./nixman.sh "$LOCAL_DIR/nixman"
+  fi
+  echo "Instaltion Finshed"
+
+  # echo -e "\e[32mConfig Added Successfully:\e[0m"
+  # echo && echo "------- Config for Nixman ----------" && echo
+  # cat "$target_dir/config"
+  # echo && echo "----- completions for fish ---------" && echo
+  # cat "$target_dir_fish/nixman.fish"
 }
 init
