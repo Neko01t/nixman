@@ -42,7 +42,8 @@ DIY
 - `nixman clean` : runs the garbage collection and deletes cached stuff 
 - `nixman build` : Runs the nixos rebuild command manually
 - `nixman run <package-name> <optional-package-commands>` : Runs the package provide without installing it on the system 
-- `nixman undo` : [new] Undo the current package git status by one . similar to uninstalling the last package you installed 
+- `nixman undo` :  Undo the current package git status by one . similar to uninstalling the last package you installed
+- `nixman list` : [new] List all packages You installed 
 
 ## Configuration Example
 
