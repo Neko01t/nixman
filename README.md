@@ -43,6 +43,7 @@ DIY
 - `nixman build` : Runs the nixos rebuild command manually
 - `nixman run <package-name> <optional-package-commands>` : Runs the package provide without installing it on the system 
 - `nixman undo` :  Undo the current package git status by one . similar to uninstalling the last package you installed
+- `nixman redo` : [new] You can now redo the changes you did from undo.
 - `nixman list` : [new] List all packages You installed 
 
 ## Configuration Example
